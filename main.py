@@ -1,4 +1,5 @@
 import os
+import argparse
 
 def make_project(target,directory):
 	''' this function creates the whole project '''
@@ -56,10 +57,14 @@ def make_project(target,directory):
 		os.mkdir(assets_path)
 	except Exception as e:
 		print(e)
-
+	
 if __name__ == '__main__':
+	# construct the argument parse and parse the arguments
+	parser = argparse.ArgumentParser(description= "Create Boiler plate for HTML,CSS,JS")
+	parser.add_argument("--startproject" ,type = str,help="Boiler plate name")
+	args = vars(parser.parse_args())
+	dir_name = args['startproject']
 	target = './'
-	directory = input('Enter project name: ')
-	make_project(target,directory)
-	print("Boiler Plate Created successfully at {}".format(directory))
+	make_project(target,dir_name)
+	print("Created boiler plate at {}!!".format(args['startproject']))
 
