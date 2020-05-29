@@ -93,6 +93,6 @@ if __name__ == '__main__':
 	parser.add_argument("--startproject" ,type = str,help="Boiler plate name")
 	args = vars(parser.parse_args())
 	dir_name = args['startproject']
-	target = '../'
+	target = './'
 	make_project(target,dir_name)
 	print("Project successfully created as '{}'!".format(args['startproject']))
