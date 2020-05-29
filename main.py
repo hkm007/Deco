@@ -8,11 +8,17 @@ def make_project(target,directory):
 	path = Path(target, directory)
 	try:
 		os.mkdir(path)
+		create_html(path)
+		create_css(path)
+		create_js(path)
 	except:
 		print("Project cannot be created.")
 		print("A directory with same name already exists!")
 		exit()
 
+
+
+def create_html(path):
 	# creates index.html
 	index = path / "index.html"
 
@@ -41,6 +47,8 @@ def make_project(target,directory):
 </html>""")
 	f.close()
 
+	
+def create_css(path):
 	# creates a folder css and make file style.css in it
 	css_path = path / "css"
 	try:
@@ -67,6 +75,8 @@ img {
 }""")
 	f.close()
 
+
+def create_js(path):
 	# creates a folder js and make file main.js in it
 	js_path = path / "js"
 	try:
@@ -90,9 +100,9 @@ img {
 if __name__ == '__main__':
 	# construct the argument parse and parse the arguments
 	parser = argparse.ArgumentParser(description= "Create Boiler plate for HTML,CSS,JS")
-	parser.add_argument("--startproject" ,type = str,help="Boiler plate name")
+	parser.add_argument("--startproject" ,type = str,help="Boiler plate project name")
 	args = vars(parser.parse_args())
 	dir_name = args['startproject']
 	target = './'
 	make_project(target,dir_name)
-	print("Project successfully created as '{}'!".format(args['startproject']))
+	print("Project successfully created as '{}'!".format(dir_name))
