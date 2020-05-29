@@ -11,6 +11,7 @@ def make_project(target,directory):
 		create_html(path)
 		create_css(path)
 		create_js(path)
+		create_assets(path)
 	except:
 		print("Project cannot be created.")
 		print("A directory with same name already exists!")
@@ -20,60 +21,63 @@ def make_project(target,directory):
 
 def create_html(path):
 	# creates index.html
-	index = path / "index.html"
+	index_path = path / "index.html"
+	try:
+		# os.mkdir(index_path)
+		f = open(index_path, "w")
+		f.write("""<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	f = open(index, "w")
-	f.write("""<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- local css -->
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 
-	<!-- local css -->
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+		<title>Deco</title>
+	</head>
+	<body>
+		<center><p><b>Welcome to Deco</b></p></center><br><br>
 
-	<title>Deco</title>
-</head>
-<body>
-	<center><p><b>Welcome to Deco</b></p></center><br><br>
+		<center>
+			<img src="https://cdnb.artstation.com/p/assets/images/images/005/731/019/original/david-bautista-fire2.gif?1493342838" alt="landing_img">
+		</center>	
 
-	<center>
-		<img src="https://cdnb.artstation.com/p/assets/images/images/005/731/019/original/david-bautista-fire2.gif?1493342838" alt="landing_img">
-	</center>	
+		<!-- local javascript -->
+		<script src="js/main.js"></script>
+	</body>
+	</html>""")
+		f.close()
 
-	<!-- local javascript -->
-	<script src="js/main.js"></script>
-</body>
-</html>""")
-	f.close()
+	except Exception as e:
+		print(e)
 
-	
+
 def create_css(path):
 	# creates a folder css and make file style.css in it
 	css_path = path / "css"
 	try:
 		os.mkdir(css_path)
+		style = css_path / "style.css"
+
+		f = open(style, "w")
+		f.write("""/* write your css here */
+	body {
+		background-color: #000000;
+	}
+
+	p {
+		color: white;
+		font-size: 50px;
+	}
+
+	img {
+		height: 300px;
+		width: 300px;
+	}""")
+		f.close()
 	except Exception as e:
 		print(e)
-
-	style = css_path / "style.css"
-
-	f = open(style, "w")
-	f.write("""/* write your css here */
-body {
-	background-color: #000000;
-}
-
-p {
-	color: white;
-	font-size: 50px;
-}
-
-img {
-	height: 300px;
-	width: 300px;
-}""")
-	f.close()
 
 
 def create_js(path):
@@ -81,15 +85,14 @@ def create_js(path):
 	js_path = path / "js"
 	try:
 		os.mkdir(js_path)
+		javascript = js_path / "main.js"
+		f = open(javascript, "w")
+		f.write("console.log('working!')")
+		f.close()
 	except Exception as e:
 		print(e)
 
-	javascript = js_path / "main.js"
-
-	f = open(javascript, "w")
-	f.write("console.log('working!')")
-	f.close()
-
+def create_assets(path):
 	# creates assets folder for images etc
 	assets_path = path / "assets"
 	try:
