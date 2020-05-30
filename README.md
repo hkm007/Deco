@@ -17,7 +17,7 @@ Software to build a basic boilerplate for web development
 #### 1. Download .exe 
     
 #### 2. Set PATH variable and confirm it by checking the version
-    python deco.py --version
+    deco --version
     
 #### 3. To Create project:
 
