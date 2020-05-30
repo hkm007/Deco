@@ -1,13 +1,16 @@
 # Deco
 Software to build a basic boilerplate for web development
 
-### To Use Python package :
-    
-    python main.py startproject proj_name
+### To Use from Python package :
 
-### To Run Server from index.html
+#### 1. Use default framework
 
-    python main.py startserver proj_name
+    python deco.py fly proj_name
+
+#### 2. Create with Bootstrap support
+
+    python deco.py fly proj_name --add bootstrap
+
 
 ### To use from executable:
     
@@ -15,9 +18,15 @@ Software to build a basic boilerplate for web development
     
 #### 2. Set PATH variable
     
-#### 3. Create project as :
-    
-    deco startproject project_name
+#### 3. To Create project:
+
+#### 3.1. Use default framework
+
+    deco fly proj_name
+
+#### 3.2. Create project with Bootstrap support
+
+    deco fly proj_name --add bootstrap
     
 #### 4. Navigate to project directory and open:
     
