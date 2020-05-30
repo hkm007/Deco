@@ -5,7 +5,7 @@ Software to build a basic boilerplate for web development
     
     python main.py startproject proj_name
 
-#### To startserver from index.html
+### To Run Server from index.html
 
     python main.py startserver proj_name
 
