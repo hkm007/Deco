@@ -1,0 +1,36 @@
+/* write your css here */
+body {
+	background-color: #000000;
+}
+
+img {
+	height: 300px;
+	width: 300px;
+}
+
+#logo{
+	text-align: center;
+}
+
+
+.glow {
+	font-size: 80px;
+	text-align: center;
+	font-family: cursive;
+	padding-top: 40px;
+	color: #fff;
+	text-align: center;
+	-webkit-animation: glow 1s ease-in-out infinite alternate;
+	-moz-animation: glow 1s ease-in-out infinite alternate;
+	animation: glow 1s ease-in-out infinite alternate;
+  }
+  
+@-webkit-keyframes glow {
+	from {
+	  text-shadow: 0 0 10px rgb(253, 236, 3), 0 0 20px rgb(247, 203, 5), 0 0 30px #f8b705, 0 0 40px #ffae00, 0 0 50px #fd7e06, 0 0 60px #ff6905, 0 0 70px #e63600;
+	}
+	
+	to {
+	  text-shadow: 0 0 20px #03e9f4, 0 0 30px #03e9f4, 0 0 40px #03e9f4, 0 0 50px #03e9f4, 0 0 60px #03e9f4, 0 0 70px #03e9f4, 0 0 80px #03e9f4;
+	}
+}

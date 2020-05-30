@@ -1,6 +1,8 @@
 import os
 import argparse
 from pathlib import Path
+import webbrowser
+import platform
 
 def startproject(args):
 	''' this function creates the whole project '''
@@ -18,7 +20,6 @@ def startproject(args):
 		print("Project cannot be created.")
 		print("A directory with same name already exists!")
 		exit()
-
 
 def create_html(path):
 	# creates index.html
@@ -115,13 +116,51 @@ def create_assets(path):
 		os.mkdir(assets_path)
 	except Exception as e:
 		print(e)
-	
+
+def start_server(args):
+	try:
+		new = 2 # open in a new tab, if possible
+
+		# open an HTML file on my own (Windows) computer
+		url = "{}/index.html".format(args.app)
+
+		#check OS
+		os_platform = platform.system()
+
+		# MacOS
+		if(os_platform == 'Darwin'):
+			chrome_path = 'open -a /Applications/Google\ Chrome.app %s'
+
+		# Windows
+		elif(os_platform == 'Windows'):
+			chrome_path = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+
+		# Linux
+		elif(os_platform == 'Darwin'):
+			chrome_path = '/usr/bin/google-chrome %s'
+
+		webbrowser.get(chrome_path).open(url)
+
+	except Exception as e:
+		print(e)
+
 if __name__ == '__main__':
 	parser = argparse.ArgumentParser()
-	subparsers = parser.add_subparsers()
-	parser_bar = subparsers.add_parser('startproject')
-	parser_bar.add_argument('dir',type=str)
-	parser_bar.set_defaults(func=startproject)
+	subparsers = parser.add_subparsers(title="commands", dest="command")
+	#Start project
+	parser_start = subparsers.add_parser('startproject')
+	parser_start.add_argument('dir',type=str)
+	parser_start.set_defaults(func=startproject)
+
+	#start_server
+	parser_server = subparsers.add_parser('startserver')
+	parser_server.add_argument('app',type=str)
+	parser_server.set_defaults(func = start_server)
+
 	args = parser.parse_args()
-	args.func(args)
+
+	if (args.command == 'startproject'):
+		args.func(args)
+	elif(args.command == 'startserver'):
+		args.func(args)
 
