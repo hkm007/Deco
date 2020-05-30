@@ -5,6 +5,10 @@ Software to build a basic boilerplate for web development
     
     python main.py startproject proj_name
 
+#### To startserver from index.html
+
+    python main.py startserver proj_name
+
 ### To use from executable:
     
 #### 1. Download .exe 
