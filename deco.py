@@ -14,6 +14,9 @@ parser_start.set_defaults(func=fly)
 #Add 
 parser_add = parser_start.add_argument('--add',type = str,help = "Add external components")
 
+#Version
+parser.add_argument('--version', action='version', version=version)
+
 if __name__ == '__main__':
 	try:
 		args = parser.parse_args()
