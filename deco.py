@@ -1,6 +1,8 @@
 import argparse
 from commands import fly,fly_Bootstrap
 
+version = '1.0.0'
+
 parser = argparse.ArgumentParser()
 subparsers = parser.add_subparsers(title="commands", dest="command")
 

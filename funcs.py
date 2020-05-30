@@ -2,6 +2,8 @@ import os
 import argparse
 from pathlib import Path
 
+version = '1.0.0'
+
 #Default fly ----------------------------------------------------------------------------------
 
 def create_html(path):
@@ -18,9 +20,9 @@ def create_html(path):
 	<link rel="icon" href="https://cdnb.artstation.com/p/assets/images/images/005/731/019/original/david-bautista-fire2.gif?1493342838" type="image/gif" sizes="16x16">
 	
 	<!-- font awesome -->
-    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 	
-	<!-- local css -->
+	<!-- css -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	
 	<title>Deco App</title>
@@ -33,7 +35,12 @@ def create_html(path):
 	<div id = "logo">
 		<img src="https://cdnb.artstation.com/p/assets/images/images/005/731/019/original/david-bautista-fire2.gif?1493342838" alt="landing_img">
 	</div>	
-	<!-- local javascript -->
+
+	<div style = "margin-top: 20px; color: white;">
+		<center><b>Open index.html and customize it to make changes.</b></center>
+	</div>
+	
+	<!-- JavaScript -->
 	<script src="js/main.js"></script>
 </body>
 </html>""")
@@ -68,7 +75,7 @@ img {
 
 #logo{
 	text-align: center;
-	margin-top: 40px;
+	margin-top: 50px;
 }
 
 
@@ -117,6 +124,13 @@ def create_assets(path):
 	except Exception as e:
 		print(e)
 
+def create_license(path):
+	# creates a license file
+	license_path = path / "license.txt"
+	f = open(license_path, "w")
+	f.write(f"This project is created using Deco v{version}\nThanks for using!")
+	f.close()
+
 
 # Bootstrap ----------------------------------------------------------------------------------------
 
@@ -132,11 +146,14 @@ def create_bootstrap_html(path):
 	
 	<!-- icon -->
 	<link rel="icon" href="https://cdnb.artstation.com/p/assets/images/images/005/731/019/original/david-bautista-fire2.gif?1493342838" type="image/gif" sizes="16x16">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<!-- font awesome -->
-    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 	
-	<!-- local css -->
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	
+	<!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+	
+	<!-- css -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	
 	<title>Deco App</title>
@@ -150,9 +167,13 @@ def create_bootstrap_html(path):
 		<img src="https://cdnb.artstation.com/p/assets/images/images/005/731/019/original/david-bautista-fire2.gif?1493342838" alt="landing_img">
 	</div>	
 
+	<div style = "margin-top: 20px; color: white;">
+		<center><b>Open index.html and customize it to make changes.</b></center>
+	</div>
 
-	<!-- local javascript -->
+	<!-- JavaScript -->
 	<script src="js/main.js"></script>
+
 	<!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
