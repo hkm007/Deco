@@ -3,7 +3,7 @@ Software to build a basic boilerplate for web development
 
 ### To Use Python package :
     
-    python main.py --startproject proj_name
+    python main.py startproject proj_name
 
 ### To use from executable:
     
@@ -13,7 +13,7 @@ Software to build a basic boilerplate for web development
     
 #### 3. Create project as :
     
-    deco --startproject project_name
+    deco startproject project_name
     
 #### 4. Navigate to project directory and open:
     
