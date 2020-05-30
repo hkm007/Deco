@@ -30,9 +30,14 @@ def create_html(path):
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- icon -->
+	<link rel="icon" href="https://cdnb.artstation.com/p/assets/images/images/005/731/019/original/david-bautista-fire2.gif?1493342838" type="image/gif" sizes="16x16">
+	
 	<!-- local css -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<title>Deco</title>
+	
+	<title>Deco App</title>
 </head>
 <body>
 	<h1 class="glow">Welcome to Deco</h1>
