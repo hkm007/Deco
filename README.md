@@ -11,12 +11,22 @@ Software to build a basic boilerplate for web development
 
     python deco.py fly proj_name --add bootstrap
 
+#### 3. Embed Components:
+
+##### Header
+
+    python deco.py ./ filename --embed header
+
+##### Footer
+
+    python deco.py ./ filename --embed footer
 
 ### To use from executable:
     
-#### 1. Download .exe 
+#### 1. Download deco.exe 
     
 #### 2. Set PATH variable and confirm it by checking the version
+
     deco --version
     
 #### 3. To Create project:
@@ -32,3 +42,13 @@ Software to build a basic boilerplate for web development
 #### 4. Navigate to project directory and open:
     
     index.html
+
+#### 5. Embed Components:
+
+##### Header
+
+    deco ./ filename --embed header
+
+##### Footer
+
+    deco ./ filename --embed footer
